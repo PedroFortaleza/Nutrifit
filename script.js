@@ -1,0 +1,2 @@
+const form=document.querySelector('#bookingForm');
+form.addEventListener('submit',event=>{event.preventDefault();const data=new FormData(form);const date=new Date(`${data.get('data')}T12:00:00`).toLocaleDateString('pt-BR',{timeZone:'America/Sao_Paulo'});const message=`Olá! Vim pelo site da Nutrifit Academia e gostaria de agendar uma aula experimental para ${date}, às ${data.get('hora')}. Meu nome é ${data.get('nome')}.`;window.open(`https://wa.me/5563991113531?text=${encodeURIComponent(message)}`,'_blank','noopener');});
